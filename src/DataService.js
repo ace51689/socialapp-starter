@@ -2,7 +2,7 @@ import axios from 'axios'
 import { store } from "./redux"
 
 class DataService {
-    constructor(url = 'http://socialapp-api.herokuapp.com', client = axios.create()) {
+    constructor(url = 'https://socialapp-api.herokuapp.com', client = axios.create()) {
         this.url = url;
         this.client = client;
     }
