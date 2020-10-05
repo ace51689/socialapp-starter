@@ -41,7 +41,7 @@ class UpdateUserForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <div className="UpdateUserForm">
-        <h1>Update Profile</h1>
+        <h2>Update Profile</h2>
         <form id="updateUser-form" onSubmit={this.handleUpdateUser}>
           <label htmlFor="password">Password </label>
           <input

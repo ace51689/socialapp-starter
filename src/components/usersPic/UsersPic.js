@@ -1,5 +1,6 @@
 import React from "react";
 import DataService from "../../DataService";
+import { Button } from "antd";
 
 class UsersPic extends React.Component {
     handlePic = (event) => {
@@ -15,7 +16,7 @@ class UsersPic extends React.Component {
                 <form onSubmit={this.handlePic}>
                     <label htmlFor="UsersPic">Choose file to upload</label>
                     <input type="file" name="picture" accept="image/*" />
-                    <button type="submit">Submit</button>
+                    <Button htmlType="submit" type="primary" size="large">Submit</Button>
                 </form>
             </div>
         )

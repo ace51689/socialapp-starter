@@ -21,7 +21,7 @@ class Home extends React.Component {
         <img className="cowboy2" src={cowboy2} alt="cowboy2" />
         <hr />
 
-        <h2>New to Convolooters? Register!</h2>
+        <h3>New to Convolooters? Register!</h3>
 
         <RegistrationForm />
       </div>

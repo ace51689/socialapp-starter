@@ -1,15 +1,15 @@
 import React from "react";
 import Menu from "../components/menu/Menu";
-import UsersPic from "../components/usersPic/UsersPic"
+import UsersPic from "../components/usersPic/UsersPic";
 import { userIsAuthenticated } from "../redux/HOCs";
-import DeleteUser from "../components/deleteUser/DeleteUser"
-
+import DeleteUser from "../components/deleteUser/DeleteUser";
 import cowboy3 from "../components/assets/images/cowboy3.png";
 import cowboy4 from "../components/assets/images/cowboy4.png";
 import cowgirl1 from "../components/assets/images/cowgirl1.png";
 import UpdateUserForm from "../components/updateUserForm/UpdateUserForm";
 import DataService from "../DataService";
-import whoops from "../components/assets/images/whoops.png"
+import whoops from "../components/assets/images/whoops.png";
+
 
 
 class Profile extends React.Component {
@@ -58,15 +58,16 @@ class Profile extends React.Component {
         <img className="cowboy3" src={cowboy3} alt="cowboy3" />
         <img className="cowboy4" src={cowboy4} alt="cowboy4" />
         <img className="cowgirl1" src={cowgirl1} alt="cowgirl1" />
-        <h2>Profile</h2>
+        <h3>Profile</h3>
         <h4>Profile Photo: </h4>
         <img src={src} alt="profile pic" />
-        <h4>Username: {loginData.username}</h4>
-        <h4>Display Name: {displayName}</h4>
-        <h4>About: {about}</h4>
+        <h5>Username: {loginData.username}</h5>
+        <h5>Display Name: {displayName}</h5>
+        <h5>About: {about}</h5>
         <hr />
         <UsersPic />
         <UpdateUserForm />
+
       </div>
     );
   }
