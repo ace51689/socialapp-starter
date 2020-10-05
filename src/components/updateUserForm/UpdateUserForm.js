@@ -30,6 +30,10 @@ class UpdateUserForm extends React.Component {
 
   handleUpdateUser = e => {
     e.preventDefault();
+    let username = false
+        if (JSON.parse(localStorage.getItem('login')).result != null) {
+            username = JSON.parse(localStorage.getItem('login')).result.username
+        }
     const updateData = {}
     if (this.state.password.length > 7) {
       updateData.password = this.state.password
@@ -43,7 +47,7 @@ class UpdateUserForm extends React.Component {
     this.client.updateUser(updateData).then(result => {
       if (result.data.statusCode === 200) {
         alert("You have successfully updated your profile")
-        window.location.href = "/profile/:username"
+        window.location.href = "/profile/" + username
       }
     })
 
@@ -60,7 +64,9 @@ class UpdateUserForm extends React.Component {
         <h1>Update Profile</h1>
         <h3>All fields are optional</h3>
         <h5>If you would like to update your password you may do it here:</h5>
-        <h6><strong>ONLY ENTER TEXT YOU WISH TO BE YOUR NEW PASSWORD</strong></h6>
+        <h6><strong>ONLY ENTER TEXT YOU WISH TO BE YOUR NEW PASSWORD
+          <br />
+          MINIMUM 8 CHARACTERS</strong></h6>
         <form id="updateUser-form" onSubmit={this.handleUpdateUser}>
           <label htmlFor="password">Password </label>
           <input

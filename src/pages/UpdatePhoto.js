@@ -5,6 +5,7 @@ import Menu from "../components/menu/Menu"
 import UsersPic from "../components/usersPic/UsersPic";
 import whoops from "../components/assets/images/whoops.png"
 import { Link } from "react-router-dom"
+import "../index.css"
 
 class UpdatePhoto extends React.Component {
     constructor(props) {
@@ -32,14 +33,20 @@ class UpdatePhoto extends React.Component {
         if (this.state.data.pictureLocation) {
             src = "http://socialapp-api.herokuapp.com" + this.state.data.pictureLocation
         }
+
+        let username = false
+        if (JSON.parse(localStorage.getItem('login')).result != null) {
+            username = JSON.parse(localStorage.getItem('login')).result.username
+        }
+        
         return (
             <div>
                 <Menu isAuthenticated={this.props.isAuthenticated} />
                 <div>Current Profile Picture:</div>
-                <img src={src} alt="Profile" />
+                <img className="update-picture" src={src} alt="Profile" />
                 <UsersPic />
                 <hr />
-                <Link to="/updateprofile/:username">Update Profile</Link>
+                <Link to={"/updateprofile/" + username}>Update Profile</Link>
                 <hr />
             </div>
         )
